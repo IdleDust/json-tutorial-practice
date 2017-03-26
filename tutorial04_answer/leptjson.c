@@ -123,6 +123,11 @@ static void lept_encode_utf8(lept_context* c, unsigned u) {
         PUTC(c, 0x80 | ((u >>  6) & 0x3F));
         PUTC(c, 0x80 | ( u        & 0x3F));
     }
+    /* 0x3F = 00111111 */
+    /* 0x80 = 10000000 */
+    /* 0xE0 = 11100000 */
+    /* 0xC0 = 11000000 */
+    /* 0xF0 = 11110000 */
 }
 
 #define STRING_ERROR(ret) do { c->top = head; return ret; } while(0)
