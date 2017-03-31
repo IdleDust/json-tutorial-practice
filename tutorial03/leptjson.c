@@ -20,7 +20,7 @@ typedef struct {
     size_t size, top;
 }lept_context;
 
-/*return the address to be filled  */
+/*return the address/position to be filled  */
 static void* lept_context_push(lept_context* c, size_t size) {
     void* ret;
     assert(size > 0);
