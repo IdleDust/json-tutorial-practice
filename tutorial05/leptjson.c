@@ -334,3 +334,5 @@ lept_value* lept_get_array_element(const lept_value* v, size_t index) {
     assert(index < v->u.a.size);
     return &v->u.a.e[index];
 }
+
+
